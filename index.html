@@ -1,21 +1,117 @@
-<script>
-  const mobileBtn = document.getElementById('mobileBtn');
-  const nav = document.createElement('nav');
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Donate Life — Blood Donation</title>
+  <meta name="description" content="Donate Life — register as blood donor or request blood. Professional, accessible blood-donation landing page." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glass { background: rgba(255,255,255,0.6); backdrop-filter: blur(8px); }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-white via-red-50 to-red-100 text-gray-800 antialiased">
+  <!-- NAV -->
+  <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold">DL</div>
+        <div>
+          <h1 class="text-lg font-semibold">Donate Life</h1>
+          <p class="text-xs text-gray-500">Save lives with one donation</p>
+        </div>
+      </a>
+      <nav class="hidden md:flex gap-6 items-center text-sm font-medium">
+        <a href="#about" class="hover:text-red-700">About</a>
+        <a href="#how" class="hover:text-red-700">How It Works</a>
+        <a href="#register" class="hover:text-red-700">Register</a>
+        <a href="#contact" class="hover:text-red-700">Contact</a>
+        <a href="#" class="px-4 py-2 bg-red-600 text-white rounded-lg shadow hover:bg-red-700 transition">Donate Now</a>
+      </nav>
+      <button id="mobileBtn" class="md:hidden p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button>
+    </div>
+  </header>
 
-  nav.className =
-    'flex flex-col gap-4 items-center bg-white text-gray-800 shadow-md absolute top-full left-0 w-full py-6 font-medium md:hidden';
-  nav.innerHTML = `
-    <a href="#about" class="hover:text-red-700">About</a>
-    <a href="#how" class="hover:text-red-700">How It Works</a>
-    <a href="#register" class="hover:text-red-700">Register</a>
-    <a href="#contact" class="hover:text-red-700">Contact</a>
-    <a href="#" class="px-4 py-2 bg-red-600 text-white rounded-lg shadow hover:bg-red-700 transition">Donate Now</a>
-  `;
+  <!-- HERO -->
+  <section class="relative w-full bg-gradient-to-r from-red-700 to-red-500 text-white pt-32 pb-20 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+      <div class="space-y-6">
+        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">Give the Gift of Life — Become a Blood Donor</h2>
+        <p class="text-lg text-red-100">Each donation can save up to three lives. Join our mission to support patients in need through safe, voluntary blood donation.</p>
+        <div class="flex gap-4 mt-6">
+          <a href="#register" class="px-6 py-3 bg-white text-red-700 rounded-lg font-semibold shadow hover:bg-red-50 transition">Register Now</a>
+          <a href="#about" class="px-6 py-3 border border-white text-white rounded-lg font-semibold hover:bg-white/10 transition">Learn More</a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute -top-10 -right-10 w-72 h-72 bg-white/20 rounded-full blur-3xl"></div>
+        <img src="https://images.unsplash.com/photo-1584466977776-8a9b6b8c4f9e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Blood Donation" class="relative w-full h-80 object-cover rounded-2xl shadow-2xl border-4 border-white/20" />
+      </div>
+    </div>
+  </section>
 
-  document.querySelector('header > div').appendChild(nav);
-  nav.style.display = 'none';
+  <!-- ABOUT -->
+  <section id="about" class="max-w-7xl mx-auto px-6 py-20">
+    <h3 class="text-3xl font-bold text-center text-gray-800">Why Donate Blood?</h3>
+    <p class="mt-4 text-center text-gray-600 max-w-2xl mx-auto">Your blood donation is a lifeline for someone in need — from accident victims to cancer patients. Every drop counts.</p>
 
-  mobileBtn.addEventListener('click', () => {
-    nav.style.display = nav.style.display === 'none' ? 'flex' : 'none';
-  });
-</script>
+    <div id="how" class="mt-12 grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-md transition text-center">
+        <h4 class="text-xl font-semibold text-red-700">Who Can Donate?</h4>
+        <p class="text-gray-600 mt-2">Healthy adults aged 17–65, weighing 50kg+, with no major health restrictions.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-md transition text-center">
+        <h4 class="text-xl font-semibold text-red-700">What Happens?</h4>
+        <p class="text-gray-600 mt-2">Simple check-up, safe collection, and quick recovery with refreshments afterward.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-md transition text-center">
+        <h4 class="text-xl font-semibold text-red-700">Aftercare</h4>
+        <p class="text-gray-600 mt-2">Drink plenty of fluids, avoid heavy exercise, and feel proud — you saved lives!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTER FORM -->
+  <section id="register" class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center text-gray-800">Register as Donor or Request Blood</h3>
+      <p class="text-center text-gray-600 mt-3">Fill out this form to get connected with our donation network. We’ll contact you for upcoming drives.</p>
+
+      <form class="mt-10 grid md:grid-cols-2 gap-6" action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" target="_blank">
+        <input class="p-3 border rounded-lg" type="text" name="entry.100000" placeholder="Full Name" required />
+        <input class="p-3 border rounded-lg" type="text" name="entry.100001" placeholder="Phone Number" required />
+        <select class="p-3 border rounded-lg" name="entry.100002" required>
+          <option value="">Select Blood Group</option>
+          <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+          <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+        </select>
+        <select class="p-3 border rounded-lg" name="entry.100003" required>
+          <option value="">Registering As</option>
+          <option>Donor</option><option>Receiver</option>
+        </select>
+        <input class="p-3 border rounded-lg md:col-span-2" type="text" name="entry.100004" placeholder="City / Location" required />
+        <div class="md:col-span-2 text-right">
+          <button class="px-6 py-3 bg-red-600 text-white rounded-lg shadow hover:bg-red-700 transition">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <footer id="contact" class="bg-red-700 text-white py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div>
+        <h4 class="text-xl font-semibold">Need Help?</h4>
+        <p class="text-red-100">Call: <strong>+48 600 000 000</strong> or Email: <a href="mailto:support@donatelife.org" class="underline hover:text-white">support@donatelife.org</a></p>
+      </div>
+      <div class="text-sm text-red-200">© 2025 Donate Life. Designed with ❤️ by Atif Javid.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobileBtn').addEventListener('click', () => alert('Mobile menu placeholder'));
+  </script>
+</body>
+</html>
