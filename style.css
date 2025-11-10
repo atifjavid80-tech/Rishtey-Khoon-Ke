@@ -18,54 +18,38 @@ header {
 nav {
   background-color: #b71c1c;
   text-align: center;
+  padding: 10px 0;
 }
 
 nav a {
   color: white;
-  display: inline-block;
-  padding: 12px 20px;
   text-decoration: none;
-  transition: background 0.3s;
+  margin: 0 15px;
+  font-weight: 500;
 }
 
 nav a:hover {
-  background-color: #d32f2f;
+  text-decoration: underline;
 }
 
-/* Responsive Enhancements */
-@media (max-width: 768px) {
-  header {
-    font-size: 18px;
-    padding: 10px;
-  }
+section {
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
-  nav a {
-    display: block;
-    padding: 10px;
-    font-size: 16px;
-  }
+h2 {
+  color: #b71c1c;
+  margin-bottom: 15px;
+}
 
-  h1, h2, h3, h4 {
-    text-align: center;
-  }
-
-  section {
-    padding: 20px 10px;
-  }
-
-  button, .btn {
-    width: 100%;
-    font-size: 1rem;
-    padding: 12px;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  footer {
-    padding: 20px 10px;
-    font-size: 0.9rem;
-  }
+footer {
+  background-color: #d32f2f;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
 }
