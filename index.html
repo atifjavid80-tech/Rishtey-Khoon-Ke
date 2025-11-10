@@ -116,3 +116,15 @@ https://docs.google.com/forms/d/e/1FAIpQLScZDYFW-KWWzytZr2K416ZMGl-tqfPPVhj3gnl0
   </script>
 </body>
 </html>
+document.getElementById('mobileBtn').addEventListener('click', function() {
+  const nav = document.querySelector('nav');
+  nav.classList.toggle('hidden');
+  nav.classList.toggle('flex');
+  nav.classList.toggle('flex-col');
+  nav.classList.toggle('absolute');
+  nav.classList.toggle('top-16');
+  nav.classList.toggle('left-0');
+  nav.classList.toggle('w-full');
+  nav.classList.toggle('bg-white');
+  nav.classList.toggle('p-4');
+});
